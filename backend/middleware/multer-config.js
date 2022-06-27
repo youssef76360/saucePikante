@@ -1,9 +1,9 @@
 const multer = require('multer'); // on récupère le package multer qui permet de gérer les fichiers entrant dans les requêtes http
 
 const MIME_TYPES = { // dictionnaire pour définir la bonne extension de fichier
-    'images/jpg': 'jpg',
-    'images/jpeg': 'jpg',
-    'images/png': 'png'
+    'image/jpg': 'jpg',
+    'image/jpeg': 'jpg',
+    'image/png': 'png'
 }
 
 const storage = multer.diskStorage({
@@ -17,4 +17,4 @@ const storage = multer.diskStorage({
     }
 });
 
-module.exports = multer({ storage }).single('images'); // on exporte multer en lui indiquant qu'on gère uniquement les images
+module.exports = multer({ storage }).single('image'); // on exporte multer en lui indiquant qu'on gère uniquement les images

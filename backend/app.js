@@ -6,6 +6,7 @@ const path = require('path'); // donne accès au chemin de notre système de fic
 
 const helmet = require('helmet'); // package nous aide à sécuriser en definissant divers headers http
 
+
 const saucesRoutes = require('./routes/sauces'); // récupération des routes sauce
 const userRoutes = require('./routes/user'); // récupération des routes user
 
@@ -31,10 +32,10 @@ mongoose.connect('mongodb+srv://youssef76360:barentin76@cluster0.lyckc.mongodb.n
         next();//passer l'execution au prochain middleware
       });
     
-    
     app.use(bodyParser.json());
     app.use(helmet());
     
+     
     app.use('/images', express.static(path.join(__dirname, 'images')));// nous permet de charger les images dans le dossier images
     
     app.use('/api/sauces', saucesRoutes);
